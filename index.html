@@ -1,45 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        
-        <meta charset="UTF-8">
-        <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-        <title>Blog</title>
-        <style>
-            header{
-                background-color: #183C63;
-                color: #183C63;
-                text-align: center;
-                max-width: 800px;
-                margin: 0 auto;
-                border: 5px solid #cf1010
-                padding: 16px;
-            }
-            main {
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Mercado de Trabalho</title>
 
-                background-color: #143355;
-                color: #183C63;
-                max-width: 800px;
-                margin: 0 auto;
-            }
-               
-        </style>
-    </head>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    <main>
-        <header>
+<body>
 
-            <h1>Requisitos Para Entrar no Mercado de Trabalho </h1>
-            <p>Vou ajudar você a descobrir os requisitos para entrar no mercado de trabalho</p>
+<header>
 
-        </header>
-        <main>
+    <h1>Requisitos Para Entrar no Mercado de Trabalho</h1>
 
-            <h2>Meu primeiro post</h2>
-            <p>Por: Leonardo Santanna </p>
-            <p>Boas Vindas ao meu blog! Aqui vou compartilhar os Requisitos Para Entrar no Mercado de Trabalho</p>
+    <p>Aprenda tudo o que você precisa para conquistar seu primeiro emprego.</p>
 
-        </body>
-    </main>
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Artigos</a>
+        <a href="#">Dicas</a>
+        <a href="#">Contato</a>
+    </nav>
+
+</header>
+
+<section class="banner">
+
+    <h2>Bem-vindo ao Blog!</h2>
+
+    <p>Conhecimento é o primeiro passo para conquistar uma vaga.</p>
+
+</section>
+
+<div class="container">
+
+<div class="post">
+
+    <img src="imagens/mercado.jpg" alt="Mercado de Trabalho">
+
+    <div class="post-content">
+
+        <h2>Meu Primeiro Post</h2>
+
+        <p class="autor">Por Leonardo Santanna</p>
+
+        <p>
+            Neste blog você aprenderá sobre currículo, entrevistas,
+            comportamento profissional, cursos e tudo o que é necessário
+            para entrar no mercado de trabalho.
+        </p>
+
+        <button onclick="curtir()">❤️ Curtir</button>
+
+        <p class="likes">
+            Curtidas:
+            <span id="likes">0</span>
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+<footer>
+
+    <h3>Blog Mercado de Trabalho</h3>
+
+    <p>© 2026 - Leonardo Santanna</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
 </html>
