@@ -1,168 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Blog</title>
-
-    <style>
-
-        body{
-            margin:0;
-            font-family:Arial, Helvetica, sans-serif;
-            background:#e9eef3;
-        }
-
-        header{
-            background-color:#183C63;
-            color:white;
-            text-align:center;
-            max-width:800px;
-            margin:20px auto 0 auto;
-            border:5px solid #cf1010;
-            padding:20px;
-            border-radius:10px 10px 0 0;
-        }
-
-        main{
-            background-color:white;
-            max-width:800px;
-            margin:0 auto;
-            padding:20px;
-            box-shadow:0 0 15px rgba(0,0,0,.2);
-            border-radius:0 0 10px 10px;
-        }
-
-        img{
-            width:100%;
-            border-radius:10px;
-        }
-
-        h2{
-            color:#183C63;
-        }
-
-        .autor{
-            color:gray;
-        }
-
-        .avaliacao{
-            margin-top:20px;
-            display:flex;
-            align-items:center;
-            gap:10px;
-        }
-
-        button{
-            border:none;
-            padding:12px 20px;
-            border-radius:8px;
-            cursor:pointer;
-            color:white;
-            font-size:16px;
-        }
-
-        #likeBtn{
-            background:#28a745;
-        }
-
-        #likeBtn:hover{
-            background:#1f7c35;
-        }
-
-        #dislikeBtn{
-            background:#dc3545;
-        }
-
-        #dislikeBtn:hover{
-            background:#b51f2e;
-        }
-
-        span{
-            font-weight:bold;
-            font-size:18px;
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog - Mercado de Trabalho</title>
+<style>
+body{margin:0;font-family:Arial;background:#eef2f7}
+header{background:#183C63;color:#fff;text-align:center;padding:25px}
+main{max-width:900px;margin:20px auto;padding:20px}
+.post{background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.2);margin-bottom:30px;overflow:hidden}
+.post img{width:100%;height:320px;object-fit:cover}
+.post .c{padding:20px}
+.autor{color:#666}
+.avaliacao{display:flex;align-items:center;gap:10px;margin-top:15px}
+button{padding:10px 16px;border:0;border-radius:8px;color:#fff;cursor:pointer}
+.like{background:#28a745}.dislike{background:#dc3545}
+button:disabled{background:#999;cursor:not-allowed}
+footer{background:#183C63;color:#fff;text-align:center;padding:20px}
+</style>
 </head>
-
 <body>
-
 <header>
-
-    <h1>Requisitos Para Entrar no Mercado de Trabalho</h1>
-
-    <p>Vou ajudar você a descobrir os requisitos para entrar no mercado de trabalho.</p>
-
+<h1>Requisitos Para Entrar no Mercado de Trabalho</h1>
+<p>Vou ajudar você a descobrir os requisitos para entrar no mercado de trabalho.</p>
 </header>
-
 <main>
 
-    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200" alt="Mercado de Trabalho">
+<div class="post">
+<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200" alt="">
+<div class="c">
+<h2>Meu primeiro post</h2>
+<p class="autor">Por: Leonardo Santanna</p>
+<p>Boas-vindas ao meu blog! Aqui vou compartilhar os requisitos para entrar no mercado de trabalho, elaborar um currículo e se destacar em entrevistas.</p>
+<div class="avaliacao">
+<button id="likeBtn1" class="like" onclick="votar(1,'like')">👍 Like</button><span id="likes1">0</span>
+<button id="dislikeBtn1" class="dislike" onclick="votar(1,'dislike')">👎 Deslike</button><span id="dislikes1">0</span>
+</div>
+</div>
+</div>
 
-    <h2>Meu primeiro post</h2>
-
-    <p class="autor">Por: Leonardo Santanna</p>
-
-    <p>
-        Boas-vindas ao meu blog!
-        Aqui vou compartilhar os principais requisitos para entrar no mercado
-        de trabalho, como currículo, entrevistas, qualificação profissional,
-        comportamento e muito mais.
-    </p>
-
-    <div class="avaliacao">
-
-        <button id="likeBtn" onclick="like()">
-            👍 Like
-        </button>
-
-        <span id="likes">0</span>
-
-        <button id="dislikeBtn" onclick="dislike()">
-            👎 Deslike
-        </button>
-
-        <span id="dislikes">0</span>
-
-    </div>
+<div class="post">
+<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200" alt="">
+<div class="c">
+<h2>Como se preparar para uma entrevista</h2>
+<p class="autor">Por: Leonardo Santanna</p>
+<p>Pesquise sobre a empresa, seja pontual, vista-se adequadamente e demonstre confiança. Mostrar interesse e educação faz diferença.</p>
+<div class="avaliacao">
+<button id="likeBtn2" class="like" onclick="votar(2,'like')">👍 Like</button><span id="likes2">0</span>
+<button id="dislikeBtn2" class="dislike" onclick="votar(2,'dislike')">👎 Deslike</button><span id="dislikes2">0</span>
+</div>
+</div>
+</div>
 
 </main>
+<footer>© 2026 - Leonardo Santanna</footer>
 
 <script>
-
-let likes = Number(localStorage.getItem("likes")) || 0;
-let dislikes = Number(localStorage.getItem("dislikes")) || 0;
-
-document.getElementById("likes").textContent = likes;
-document.getElementById("dislikes").textContent = dislikes;
-
-function like(){
-
-    likes++;
-
-    document.getElementById("likes").textContent = likes;
-
-    localStorage.setItem("likes", likes);
-
+function carregar(id){
+ let l=Number(localStorage.getItem('likes'+id))||0;
+ let d=Number(localStorage.getItem('dislikes'+id))||0;
+ document.getElementById('likes'+id).textContent=l;
+ document.getElementById('dislikes'+id).textContent=d;
+ if(localStorage.getItem('voto'+id)){
+   document.getElementById('likeBtn'+id).disabled=true;
+   document.getElementById('dislikeBtn'+id).disabled=true;
+ }
 }
-
-function dislike(){
-
-    dislikes++;
-
-    document.getElementById("dislikes").textContent = dislikes;
-
-    localStorage.setItem("dislikes", dislikes);
-
+function votar(id,tipo){
+ if(localStorage.getItem('voto'+id)) return;
+ if(tipo==='like'){
+   let l=Number(localStorage.getItem('likes'+id))||0;
+   localStorage.setItem('likes'+id,++l);
+ }else{
+   let d=Number(localStorage.getItem('dislikes'+id))||0;
+   localStorage.setItem('dislikes'+id,++d);
+ }
+ localStorage.setItem('voto'+id,tipo);
+ carregar(id);
 }
-
+carregar(1);carregar(2);
 </script>
-
 </body>
-
 </html>
