@@ -1,11 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Mercado de Trabalho</title>
 
-    <link rel="stylesheet" href="style.css">
+    <title>Blog</title>
+
+    <style>
+
+        body{
+            margin:0;
+            font-family:Arial, Helvetica, sans-serif;
+            background:#e9eef3;
+        }
+
+        header{
+            background-color:#183C63;
+            color:white;
+            text-align:center;
+            max-width:800px;
+            margin:20px auto 0 auto;
+            border:5px solid #cf1010;
+            padding:20px;
+            border-radius:10px 10px 0 0;
+        }
+
+        main{
+            background-color:white;
+            max-width:800px;
+            margin:0 auto;
+            padding:20px;
+            box-shadow:0 0 15px rgba(0,0,0,.2);
+            border-radius:0 0 10px 10px;
+        }
+
+        img{
+            width:100%;
+            border-radius:10px;
+        }
+
+        h2{
+            color:#183C63;
+        }
+
+        .autor{
+            color:gray;
+        }
+
+        .avaliacao{
+            margin-top:20px;
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        button{
+            border:none;
+            padding:12px 20px;
+            border-radius:8px;
+            cursor:pointer;
+            color:white;
+            font-size:16px;
+        }
+
+        #likeBtn{
+            background:#28a745;
+        }
+
+        #likeBtn:hover{
+            background:#1f7c35;
+        }
+
+        #dislikeBtn{
+            background:#dc3545;
+        }
+
+        #dislikeBtn:hover{
+            background:#b51f2e;
+        }
+
+        span{
+            font-weight:bold;
+            font-size:18px;
+        }
+
+    </style>
+
 </head>
 
 <body>
@@ -14,65 +96,73 @@
 
     <h1>Requisitos Para Entrar no Mercado de Trabalho</h1>
 
-    <p>Aprenda tudo o que você precisa para conquistar seu primeiro emprego.</p>
-
-    <nav>
-        <a href="#">Início</a>
-        <a href="#">Artigos</a>
-        <a href="#">Dicas</a>
-        <a href="#">Contato</a>
-    </nav>
+    <p>Vou ajudar você a descobrir os requisitos para entrar no mercado de trabalho.</p>
 
 </header>
 
-<section class="banner">
+<main>
 
-    <h2>Bem-vindo ao Blog!</h2>
+    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200" alt="Mercado de Trabalho">
 
-    <p>Conhecimento é o primeiro passo para conquistar uma vaga.</p>
+    <h2>Meu primeiro post</h2>
 
-</section>
+    <p class="autor">Por: Leonardo Santanna</p>
 
-<div class="container">
+    <p>
+        Boas-vindas ao meu blog!
+        Aqui vou compartilhar os principais requisitos para entrar no mercado
+        de trabalho, como currículo, entrevistas, qualificação profissional,
+        comportamento e muito mais.
+    </p>
 
-<div class="post">
+    <div class="avaliacao">
 
-    <img src="imagens/mercado.jpg" alt="Mercado de Trabalho">
+        <button id="likeBtn" onclick="like()">
+            👍 Like
+        </button>
 
-    <div class="post-content">
+        <span id="likes">0</span>
 
-        <h2>Meu Primeiro Post</h2>
+        <button id="dislikeBtn" onclick="dislike()">
+            👎 Deslike
+        </button>
 
-        <p class="autor">Por Leonardo Santanna</p>
-
-        <p>
-            Neste blog você aprenderá sobre currículo, entrevistas,
-            comportamento profissional, cursos e tudo o que é necessário
-            para entrar no mercado de trabalho.
-        </p>
-
-        <button onclick="curtir()">❤️ Curtir</button>
-
-        <p class="likes">
-            Curtidas:
-            <span id="likes">0</span>
-        </p>
+        <span id="dislikes">0</span>
 
     </div>
 
-</div>
+</main>
 
-</div>
+<script>
 
-<footer>
+let likes = Number(localStorage.getItem("likes")) || 0;
+let dislikes = Number(localStorage.getItem("dislikes")) || 0;
 
-    <h3>Blog Mercado de Trabalho</h3>
+document.getElementById("likes").textContent = likes;
+document.getElementById("dislikes").textContent = dislikes;
 
-    <p>© 2026 - Leonardo Santanna</p>
+function like(){
 
-</footer>
+    likes++;
 
-<script src="script.js"></script>
+    document.getElementById("likes").textContent = likes;
+
+    localStorage.setItem("likes", likes);
+
+}
+
+function dislike(){
+
+    dislikes++;
+
+    document.getElementById("dislikes").textContent = dislikes;
+
+    localStorage.setItem("dislikes", dislikes);
+
+}
+
+</script>
 
 </body>
+
 </html>
